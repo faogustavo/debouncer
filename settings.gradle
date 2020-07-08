@@ -1,0 +1,3 @@
+include ':debouncer'
+include ':demo'
+rootProject.name = "Debounce Demo"
