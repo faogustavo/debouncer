@@ -1,5 +1,20 @@
 # Debouncer
 
+<p align="center">
+    <a href="https://github.com/faogustavo/debouncer/issues"><img src="https://img.shields.io/github/issues/faogustavo/debouncer.svg?style=for-the-badge&logo=Github" alt="GitHub issues"/></a>
+    <a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/github/license/faogustavo/debouncer.svg?style=for-the-badge&logo=Apache" alt="License"/></a>
+    <a href="/"><img src="https://img.shields.io/github/languages/top/faogustavo/debouncer.svg?style=for-the-badge&logo=Kotlin&logoColor=white" alt="GitHub top language"/></a>
+</p>
+
+<p align="center">
+    <a href="https://codecov.io/gh/faogustavo/debouncer"><img src="https://img.shields.io/codecov/c/github/faogustavo/debouncer?style=for-the-badge" alt="codecov"/></a>
+    <a href="/"><img src="https://img.shields.io/github/workflow/status/faogustavo/debouncer/Unit%20Tests/master?label=Tests&style=for-the-badge" alt="Tests"/></a>
+</p>
+
+<p align="center">
+    <a href="https://bintray.com/faogustavo/maven/debouncer"><img src="https://img.shields.io/badge/dynamic/json.svg?label=latest%20release&url=https%3A%2F%2Fapi.bintray.com%2F%2Fpackages%2Ffaogustavo%2Fmaven%2Fdebouncer%2Fversions%2F_latest&query=name&colorB=0094cd&style=for-the-badge" alt="Bintray"/></a>
+</p>
+
 A simple way to debounce repeated calls.
 
 ## Install
