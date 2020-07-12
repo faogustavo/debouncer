@@ -1,8 +1,8 @@
 package dev.valvassori.debounce.demo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dev.valvassori.debouncer.Debouncer
 import kotlinx.android.synthetic.main.activity_main.*

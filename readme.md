@@ -88,7 +88,7 @@ private fun showToast() = debouncer.launch(delayDuration = 1000, coroutineContex
 
 ## Next Steps
 
-- [ ] Add KTLint
+- [X] Add KTLint
 - [ ] Run unit tests on github actions
 - [ ] Return the value from the call that did run
 

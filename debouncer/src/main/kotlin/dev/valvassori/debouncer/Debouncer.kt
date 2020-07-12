@@ -27,7 +27,7 @@ class Debouncer(
         }
     }
 
-    private suspend fun shouldIRun(context: Any) = mutex.withLock {
+    private suspend fun shouldIRun(context: Any) = mutex.withLock(owner = context) {
         val hits = hitsChecker.getOrElse(context) { 0 } - 1
         return@withLock when {
             hits <= 0 -> {
@@ -41,7 +41,7 @@ class Debouncer(
         }
     }
 
-    private suspend fun addHit(context: Any) = mutex.withLock {
+    private suspend fun addHit(context: Any) = mutex.withLock(owner = context) {
         val hits = hitsChecker.getOrElse(context) { 0 } + 1
         hitsChecker[context] = hits
         return@withLock hits
