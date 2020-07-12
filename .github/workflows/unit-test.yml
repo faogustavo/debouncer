@@ -30,6 +30,11 @@ jobs:
         run: ./gradlew assemble
 
       - name: Test Lib
-        run: |
-          ./gradlew :debouncer:test
-          bash <(curl -s https://codecov.io/bash)
+        run: ./gradlew :debouncer:jacocoReport
+
+      - name: Submit test report
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./debouncer/build/reports/jacoco/jacocoReport/jacocoReport.xml
+          fail_ci_if_error: true
