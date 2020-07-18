@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import dev.valvassori.debouncer.Debouncer
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     private val debouncer = Debouncer(lifecycleScope)
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showToast() = debouncer.launch(delayDuration = 1000, coroutineContext = Dispatchers.IO) {
-        Toast.makeText(this@MainActivity, "Hello world", Toast.LENGTH_SHORT).show()
+        withContext(Dispatchers.Main) {
+            Toast.makeText(this@MainActivity, "Hello world", Toast.LENGTH_SHORT).show()
+        }
     }
 }

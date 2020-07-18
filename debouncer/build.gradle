@@ -1,6 +1,8 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 apply plugin: 'jacoco'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -47,6 +49,57 @@ task jacocoReport(type: JacocoReport) {
     doLast {
         println "Wrote HTML report to file://${buildDir.path}/reports/jacoco/jacocoReport/html/index.html"
         println "Wrote XML report to file://${buildDir.path}/reports/jacoco/jacocoReport/jacocoReport.xml"
+    }
+}
+
+publishing {
+    publications {
+        lib(MavenPublication) {
+            groupId = 'dev.valvassori'
+            artifactId = 'debouncer'
+            version = '1.0'
+
+            pom {
+                name = 'Debouncer'
+                description = 'A simple way to debounce repeated calls.'
+                url = 'https://github.com/faogustavo/debouncer'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'faogustavo'
+                        name = 'Gustavo Fão'
+                        email = 'faogustavo@gmail.com'
+                    }
+                }
+            }
+
+            from(components.java)
+        }
+    }
+}
+
+bintray {
+    user = System.getenv("BINTRAY_USER")
+    key = System.getenv("BINTRAY_KEY")
+    publications = ['lib']
+
+    pkg {
+        repo = 'maven'
+        name = 'Debouncer'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/faogustavo/debouncer'
+
+        version {
+            name = '1.0'
+            vcsTag = '1.0'
+        }
     }
 }
 

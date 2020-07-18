@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-    <a href="https://bintray.com/faogustavo/maven/debouncer"><img src="https://img.shields.io/badge/dynamic/json.svg?label=latest%20release&url=https%3A%2F%2Fapi.bintray.com%2F%2Fpackages%2Ffaogustavo%2Fmaven%2Fdebouncer%2Fversions%2F_latest&query=name&colorB=0094cd&style=for-the-badge" alt="Bintray"/></a>
+    <a href="https://bintray.com/faogustavo/maven/Debouncer"><img src="https://img.shields.io/badge/dynamic/json.svg?label=latest%20release&url=https%3A%2F%2Fapi.bintray.com%2F%2Fpackages%2Ffaogustavo%2Fmaven%2FDebouncer%2Fversions%2F_latest&query=name&colorB=0094cd&style=for-the-badge" alt="Bintray"/></a>
 </p>
 
 A simple way to debounce repeated calls.
@@ -22,7 +22,7 @@ A simple way to debounce repeated calls.
 Add this dependency on your build.gradle:
 
 ```groovy
-// TODO: Publish it
+implementation 'dev.valvassori:debouncer:$debouncer_version'
 ```
 
 ## Usage
